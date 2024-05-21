@@ -1,21 +1,5 @@
-// Initial state
-const initialState = { count: 0 };
+const counterReducer = require('./reducer');
 
-// Reducer function
-function counterReducer(state = initialState, action) {
-  switch (action.type) {
-    case 'ADD':
-      return { count: state.count + 1 };
-    case 'SUBTRACT':
-      return { count: state.count - 1 };
-    case 'RESET':
-      return { count: 0 };
-    default:
-      return state;
-  }
-}
-
-// Redux-inspired store
 function createStore(reducer) {
   let state;
   let listeners = [];
@@ -40,7 +24,7 @@ function createStore(reducer) {
   return { getState, dispatch, subscribe };
 }
 
-// Create the store
+// Create the store with the counterReducer
 const store = createStore(counterReducer);
 
 // Subscribe to state changes and log to console
@@ -48,5 +32,4 @@ store.subscribe(() => {
   console.log('State:', store.getState());
 });
 
-// Export the store
 module.exports = store;
