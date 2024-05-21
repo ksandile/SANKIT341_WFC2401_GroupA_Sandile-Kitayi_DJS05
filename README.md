@@ -1,3 +1,7 @@
+## How to Run
+1. Clone the repository.
+2. Navigate to the project directory and run `node scenarioX.js` in a JavaScript runtime environment for each scenario, where `X` is the scenario number (1, 2, 3, or 4).
+3. Observe the console logs to see the state changes as different actions are dispatched.
 # Approach
 
 ## Reducer
